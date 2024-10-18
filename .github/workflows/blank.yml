@@ -2,14 +2,13 @@
 name: CI 
 on:
   workflow_dispatch:
-	jobs:  
-  build:
+jobs:  
+   build:
 	runs-on: ubuntu-latest
-    steps:
-      - name: Run a one-line script
+steps:
+      -name: Run a one-line script
         run: echo Hello, world!
-
-          deploy-dev:
+ deploy-dev:
     runs-on: ubuntu-latest
     environment:
     name: dev
@@ -26,7 +25,6 @@ on:
     needs: deploy-dev
       - name: Run a one-line script
         run: echo deploy, hummm!
-
      deploy-prd:
     runs-on: ubuntu-latest
     environment:
@@ -35,7 +33,3 @@ on:
     needs: deploy-prd
       - name: Run a one-line script
         run: echo deploy, dev!
-
-
-      
-          
