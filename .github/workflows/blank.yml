@@ -5,19 +5,32 @@ on:
 jobs:  
    build:
 	runs-on: ubuntu-latest
-steps:
+ build:
+       runs-on: ubuntu-latest
+ steps:
       -name: Run a one-line script
+      -name: Run a one-line
         run: echo Hello, world!
  deploy-dev:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     environment:
+      environment:
     name: dev
+      name: dev
     url:'julioarruda.com'
+url:'julioarruda.com'
     needs: build 
+needs: build
       - name: Run a one-line script
+-name: Run a one-line script
         run: echo deploy, dev!
+run: echo deploy, dev!
 
-        deploy-hummm:
+  deploy-hummm:
+     runs-on: ubuntu-latest
+
+     environment:
+     name: hummm
     runs-on: ubuntu-latest
     environment:
     name: hummm
