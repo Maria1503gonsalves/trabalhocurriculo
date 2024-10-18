@@ -1,0 +1,41 @@
+name: DemonewCD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: 'julioarruda.com'
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo deploy, dev!
+
+  deploy-hummm:
+    runs-on: ubuntu-latest
+    environment:
+      name: hummm
+      url: 'julioarruda.com'
+    needs: deploy-dev
+    steps:
+      - name: Run a one-line script
+        run: echo deploy, hummm!
+
+  deploy-prd:
+    runs-on: ubuntu-latest
+    environment:
+      name: prd
+      url: 'julioarruda.com'
+    needs: deploy-hummm
+    steps:
+      - name: Run a one-line script
+        run: echo deploy, prd!
